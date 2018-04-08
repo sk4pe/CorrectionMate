@@ -23,7 +23,6 @@ punktesystem = None
 counter_table = 15
 notenschl_table = None
 anzahl_sus = None
-
 row_anchor_point_table = None
 col_anchor_point_table = 3
 format_rot_m_b = None
