@@ -37,6 +37,7 @@ format_gruen_b = None
 format_rot_b = None
 workbook = None
 
+#Noten für verschiedene Systeme
 noten_eins = [
     '6',
     '5-',
