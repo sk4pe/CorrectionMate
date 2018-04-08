@@ -19,6 +19,7 @@ KOMMENTARE_NAME = "3. Kommentare eintragen"
 OVERVIEW_NAME = "4. Übersicht"
 RAW_NAME = "Rohdaten (Export)"
 
+#Initialisierung
 punktesystem = None
 counter_table = 15
 notenschl_table = None
