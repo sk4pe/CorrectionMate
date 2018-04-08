@@ -56,7 +56,7 @@ noten_eins = [
     '1'
 ]
 
-#Testa
+#Noten für Systeme
 noten_einsplus = [
     '6',
     '5-',
