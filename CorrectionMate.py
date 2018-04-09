@@ -404,21 +404,37 @@ def createRohdaten():
 
     aufgabe = 1
     col = 2
+    col_auswertung = 3
     for anzUAufg in anzahl_Unteraufgaben:
         worksheet_raw.write_string(0, col, "A" + str(aufgabe), format_rot_b)
+        if anzUAufg==0:
+            formula = "=IF('2. Auswertung eintragen'!" + xl_rowcol_to_cell(7,col_auswertung)+'=0,"",'+"'2. Auswertung eintragen'!"+xl_rowcol_to_cell(7,col_auswertung)+')'
+            worksheet_raw.write_formula(0,col,formula,format_rot_b)
+            col_auswertung+=1
         col += 1
         for i in range(0, anzUAufg):
-            worksheet_raw.write_string(0, col, "A" + str(aufgabe) + " " + chr(ord('a') + i) + ")", format_rot_b)
+            formula = "=IF('2. Auswertung eintragen'!" + xl_rowcol_to_cell(7,col_auswertung)+'=0,"",'+"'2. Auswertung eintragen'!"+xl_rowcol_to_cell(7,col_auswertung)+')'
+            worksheet_raw.write_formula(0,col,formula,format_rot_b)
+            #worksheet_raw.write_string(0, col, "A" + str(aufgabe) + " " + chr(ord('a') + i) + ")", format_rot_b)
             col += 1
+            col_auswertung +=1
         aufgabe += 1
 
     aufgabe = 1
+    col_auswertung = 3
     for anzUAufg in anzahl_Unteraufgaben:
         worksheet_raw.write_string(0, col, "A" + str(aufgabe) + " gesamt", format_rot_b)
+        if anzUAufg==0:
+            formula = "=IF('2. Auswertung eintragen'!" + xl_rowcol_to_cell(7,col_auswertung)+'=0,"",'+"CONCATENATE('2. Auswertung eintragen'!"+xl_rowcol_to_cell(7,col_auswertung)+'," gesamt"))'
+            worksheet_raw.write_formula(0,col,formula,format_rot_b)
+            col_auswertung+=1
         col += 1
         for i in range(0, anzUAufg):
-            worksheet_raw.write_string(0, col, "A" + str(aufgabe) + " " + chr(ord('a') + i) + ") gesamt", format_rot_b)
+            formula = "=IF('2. Auswertung eintragen'!" + xl_rowcol_to_cell(7,col_auswertung)+'=0,"",'+"CONCATENATE('2. Auswertung eintragen'!"+xl_rowcol_to_cell(7,col_auswertung)+'," gesamt"))'
+            worksheet_raw.write_formula(0,col,formula,format_rot_b)
+            #worksheet_raw.write_string(0, col, "A" + str(aufgabe) + " " + chr(ord('a') + i) + ") gesamt", format_rot_b)
             col += 1
+            col_auswertung+=1
         aufgabe += 1
 
     worksheet_raw.write_string(0, col, "Summe", format_rot_b)
